@@ -1,3 +1,5 @@
+import unittest
+
 def area(a, b):
 	return a * b
 	'''Приниает a и b,возвращает площадь прямоугольника со сторонами a и b
@@ -13,3 +15,14 @@ def perimeter(a, b):
         	perimeter(5, 9)
         	28
 	'''
+
+class RectangleTestCase(unittest.TestCase):
+
+    def test_area(self):
+        res = area(10, 25)
+        self.assertEqual(res, 250)
+        
+    def test_perimeter(self):
+        res = perimeter(10, 25)
+        self.assertEqual(res, 70)
+        
