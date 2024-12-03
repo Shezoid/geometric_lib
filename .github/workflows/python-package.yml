@@ -13,6 +13,11 @@ jobs:
   test_with_ubuntu:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.11
     - name: Test with pytest
       run: |
         python -m unittest rect.py
